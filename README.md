@@ -25,15 +25,18 @@
 #### Android
 
 1. Edit your project AndroidManifest.xml
-  - Add 
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-  - Add service
-   <service android:name="com.ttlock.bl.sdk.service.BluetoothLeService" />
-   
+  Add permission 
+  ```
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  ```
+  Add service
+  ```
+  <service android:name="com.ttlock.bl.sdk.service.BluetoothLeService" />
+   ```
 2. Append the following lines to `android/settings.gradle`:
   	```
   	include ':react-native-ttlock'
@@ -48,9 +51,10 @@
 ###
 init TTLock SDK,this must be done before using this conponent.  param uid is get from server.
 
-TtLockModule.initTTlockApi(uid)
-/**add listener to receive bluetooth lock before do start scan device,callback will return a map object**/
-TtLockModule.addReceiveScanDeviceListener(lockItemMap => {
+####TtLockModule.initTTlockApi(uid)
+
+###add listener to receive bluetooth lock before do start scan device,callback will return a map object
+####TtLockModule.addReceiveScanDeviceListener(lockItemMap => {
             let lockMacAddress = lockItemMap.lockMac
 			let lockName = lockItemMap.lockName
 			let canBeAdded = lockItemMap.isSettingMode
@@ -58,8 +62,8 @@ TtLockModule.addReceiveScanDeviceListener(lockItemMap => {
 			let isKeyboardLight = lockItemMap.isTouch
         })
 		
-/**For Android scan device need PERMISSIONS.ACCESS_COARSE_LOCATION before do startBTDeviceScan.**/
-try {
+###For Android scan device need PERMISSIONS.ACCESS_COARSE_LOCATION before do startBTDeviceScan.
+####try {
    const granted = await PermissionsAndroid.request(
                     PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
                     {
