@@ -49,12 +49,7 @@
 init TTLock SDK,this must be done before using this conponent.  param uid is get from server.
 
 TtLockModule.initTTlockApi(uid)
-
-
-### 
-add listener to receive bluetooth lock before do start scan device,callback will return a map object
-
-#### ex: 
+/**add listener to receive bluetooth lock before do start scan device,callback will return a map object**/
 TtLockModule.addReceiveScanDeviceListener(lockItemMap => {
             let lockMacAddress = lockItemMap.lockMac
 			let lockName = lockItemMap.lockName
@@ -63,9 +58,8 @@ TtLockModule.addReceiveScanDeviceListener(lockItemMap => {
 			let isKeyboardLight = lockItemMap.isTouch
         })
 		
-//For Android scan device need PERMISSIONS.ACCESS_COARSE_LOCATION before do startBTDeviceScan.
-if(Platform.OS === "android"){
-  try {
+/**For Android scan device need PERMISSIONS.ACCESS_COARSE_LOCATION before do startBTDeviceScan.**/
+try {
    const granted = await PermissionsAndroid.request(
                     PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
                     {
@@ -81,40 +75,3 @@ if(Platform.OS === "android"){
             }catch (e) {
                
             }
-}else {
-   TtLockModule.startBTDeviceScan()                  
-}
-
-###
-lockInitialize(lockMac,cb)：do lock initailization.
-
-#### 
-ex:
-TtLockModule.lockInitialize(item.lockMacAddress,result => {
-  let lockDataJsonString = result.lockDataJsonString
-  if(result.success){
-   /**
-	do upload lockDataJsonString to server to finish lock initialization.
-	**/
-   }
-   })
-
-###
-unlockByUser(keyObj,cb):unlock lock by using e-key which is get from server.
-####
-  TtLockModule.unlockByUser(unlockKey,callback => {
-    if(callback.success){
-		/**
-		unlock success.
-		**/
-	}
-  })
-
-###
-getOperateLog(keyObj,cb)：get log from lock 
-
-###
-setLockTime(timestamp,lockObj,cb)：correct lock time
-
-###
-resetLock(lockObj,cb)：reset lock,when this operation is success,this lock can be add again.
