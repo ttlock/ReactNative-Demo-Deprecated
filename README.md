@@ -25,6 +25,7 @@
 #### Android
 
 1. Edit your project AndroidManifest.xml
+
   Add permission 
   ```
   <uses-permission android:name="android.permission.VIBRATE" />
