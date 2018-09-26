@@ -46,36 +46,3 @@
   	```
    compile project(':react-native-ttlock')
 
-## Usage
-
-###
-init TTLock SDK,this must be done before using this conponent.  param uid is get from server.
-
-####TtLockModule.initTTlockApi(uid)
-
-###add listener to receive bluetooth lock before do start scan device,callback will return a map object
-####TtLockModule.addReceiveScanDeviceListener(lockItemMap => {
-            let lockMacAddress = lockItemMap.lockMac
-			let lockName = lockItemMap.lockName
-			let canBeAdded = lockItemMap.isSettingMode
-			let rssi = lockItemMap.rssi
-			let isKeyboardLight = lockItemMap.isTouch
-        })
-		
-###For Android scan device need PERMISSIONS.ACCESS_COARSE_LOCATION before do startBTDeviceScan.
-####try {
-   const granted = await PermissionsAndroid.request(
-                    PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
-                    {
-                        'title':'Need Location Permission',
-                        'message':'it can not work without location permission'
-                    }
-                )
-                if(granted === PermissionsAndroid.RESULTS.GRANTED){
-                    TtLockModule.startBTDeviceScan()
-                }else {
-                    
-                }
-            }catch (e) {
-               
-            }
