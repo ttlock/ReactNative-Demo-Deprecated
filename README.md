@@ -17,8 +17,7 @@
 1. In XCode, drag `TTLock.framework` from `node_modules/react-native-ttlock/ios/TtLockModule/TtLockModule` to project navigator `Libraries`
 2. In XCode, in the project navigator, select your project. Add `TTLock.framework` to your project's `General` ➜ `Embedded Binaries`
 3. In XCode,Add Key`Privacy - Bluetooth Peripheral Usage Description` Value `your description for bluetooth` to your project's `info` ➜ `Custom iOS Target Projectes`
-4. In XCode, add `libTtLockModule.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-5. Run your project (`Cmd+R`)<
+4. Run your project (`Cmd+R`)<
 
 #### Android
 
