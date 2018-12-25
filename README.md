@@ -7,7 +7,7 @@
 
  2. `$ react-native link react-native-ttlock`
 
-### add configuration to project
+## add configuration to project
 
 
 #### iOS
