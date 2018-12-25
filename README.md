@@ -1,15 +1,13 @@
 
-# install react-native-ttlock lib
+# react-native-ttlock
 
-## Getting started
+## install and link lib
 
-`$ npm install react-native-ttlock --save`
+ 1. `$ npm install react-native-ttlock --save`
 
-### Mostly automatic installation
+ 2. `$ react-native link react-native-ttlock`
 
-`$ react-native link react-native-ttlock`
-
-### Manual installation
+### add configuration to project
 
 
 #### iOS
@@ -21,19 +19,7 @@
 
 #### Android
 
-1. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-ttlock'
-  	project(':react-native-ttlock').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-ttlock/android')
-  	```
-2 Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-   ```
-   compile project(':react-native-ttlock')
-  ```
-  
-### Android need to add more configuration:
-
-##### 1. config repositories in `android/build.gradle`:
+1. config repositories in `android/build.gradle`:
 
 ```
 allprojects {
@@ -45,9 +31,8 @@ allprojects {
     }
 }
 ```   
-##### 2. add permission and service inAndroidManifest.xml:
 
-  Add permission 
+2.Add permission 
   ```
   <uses-permission android:name="android.permission.VIBRATE" />
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -55,7 +40,7 @@ allprojects {
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   ```
-  Add service
+3.Add service
   ```
   <service android:name="com.ttlock.bl.sdk.service.BluetoothLeService" />
    ```
