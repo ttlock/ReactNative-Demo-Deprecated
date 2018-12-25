@@ -44,4 +44,9 @@ allprojects {
   ```
   <service android:name="com.ttlock.bl.sdk.service.BluetoothLeService" />
    ```
+## Use module in Project App.js
+```
+ import TtLockModule from 'react-native-ttlock';
 
+ TtLockModule.initTTlockApi(uid)
+```
