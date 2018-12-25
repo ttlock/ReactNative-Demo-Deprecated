@@ -27,9 +27,9 @@
   	project(':react-native-ttlock').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-ttlock/android')
   	```
 2 Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
+   ```
    compile project(':react-native-ttlock')
-  	```
+  ```
    
 ### add permission and service for Android project
 
