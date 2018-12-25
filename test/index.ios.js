@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import InitLock from './initLock'
-import TtLock from 'react-native-ttlock';
+import TtLockModule from 'react-native-ttlock';
 
 
 import {
@@ -22,7 +22,7 @@ export default class test extends Component {
   constructor(props){
     super(props)
     let uid = 12
-    TtLock.initTTlockApi(uid)
+    TtLockModule.initTTlockApi(uid)
   }
 
   render() {
