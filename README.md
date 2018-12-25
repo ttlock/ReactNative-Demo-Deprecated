@@ -30,10 +30,22 @@
    ```
    compile project(':react-native-ttlock')
   ```
-   
-### add permission and service for Android project
+  
+### Android need to add more configuration:
 
-Edit your project AndroidManifest.xml
+##### 1. config repositories in `android/build.gradle`:
+
+```
+allprojects {
+    repositories {
+    
+      flatDir{
+         dirs "$rootDir/../node_modules/react-native-ttlock/android/libs"
+      }
+    }
+}
+```   
+##### 2. add permission and service inAndroidManifest.xml:
 
   Add permission 
   ```
