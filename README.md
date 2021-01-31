@@ -1,5 +1,7 @@
+# Note: The demo has been deprecated.  The new plugin and demo https://github.com/ttlock/react-native-ttlock
 
-# react-native-ttlock
+
+# react-native-ttlock 
 
 ## Developers Email list
 ttlock-developers-email-list@googlegroups.com
