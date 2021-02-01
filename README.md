@@ -8,7 +8,7 @@ ttlock-developers-email-list@googlegroups.com
 
 ## install and link lib
 
- 1. `$ npm install react-native-ttlock --save`
+ 1. `$ npm install react-native-ttlock@1.1.0 --save`
 
  2. `$ react-native link react-native-ttlock`
 
